@@ -20,7 +20,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long codigo;
 	@Column
 	private String nome;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -28,11 +28,12 @@ public class Usuario {
 	@Lob
 	private String foto;
 	
-	public Long getId() {
-		return id;
+	
+	public Long getCodigo() {
+		return codigo;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 	public String getNome() {
 		return nome;
@@ -53,9 +54,10 @@ public class Usuario {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+	
 	@Override
 	public int hashCode() {
-		return Objects.hash(dataNascimento, foto, id, nome);
+		return Objects.hash(dataNascimento, foto, codigo, nome);
 	}
 	
 	@Override
@@ -68,6 +70,6 @@ public class Usuario {
 			return false;
 		Usuario other = (Usuario) obj;
 		return Objects.equals(dataNascimento, other.dataNascimento) && foto == other.foto
-				&& Objects.equals(id, other.id) && Objects.equals(nome, other.nome);
+				&& Objects.equals(codigo, other.codigo) && Objects.equals(nome, other.nome);
 	}	
 }
