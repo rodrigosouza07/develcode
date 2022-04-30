@@ -26,7 +26,7 @@ import com.develcode.rodrigo.repository.UsuarioRepository;
 import com.develcode.rodrigo.service.UsuarioService;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
 	@Autowired
